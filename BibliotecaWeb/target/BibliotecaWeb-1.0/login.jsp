@@ -7,23 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    
+
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
+
+    <!-- Font Awesome icons (free version) -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofpXbY0E2PnQ1c1Nqoq7vmODdR/5C5IND"
+        crossorigin="anonymous" />
+
+    <!-- Core theme CSS (includes custom styles) -->
     <link href="css/styles.css" rel="stylesheet" />
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/js/bootstrap.min.js"></script>
-        <title>Biblioteca</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    
+    <title>Biblioteca</title>
 </head>
 
 <body id="page-top">
@@ -35,7 +46,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" alt="..." /></a>
+            <a class="navbar-brand" href="login.jsp?usuario=<%=usuario%>&cedula=<%=cedula%>"><img src="assets/img/logo.png" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -47,6 +58,7 @@
                     <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services-new">Agregar</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Mis libros</a></li>
+                     <li class="nav-item"><a class="nav-link" href="index.jsp">Cerrar Sesion</a></li>
                 </ul>
             </div>
         </div>
@@ -232,6 +244,7 @@
                                 <th>Titulo</th>
                                 <th>Autor</th>
                                 <th>Año publicacion</th>
+                                 <th>Portada</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
@@ -348,6 +361,7 @@
                 <form id="miFormularioTitulo" action="SvEditar" method="POST">
                     <div class="modal-header">
                         <h5 class="modal-title" id="editTituloLabel">Editar autor</></h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div id="tarea-detalles" style="display: flex; justify-content: center;">
@@ -363,7 +377,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close"style="margin-right: 10px;">Cancelar</button>
+                       <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" style="margin-right: 10px;">Cancelar</button>
+
                         <button type="submit" class="btn btn-danger" onclick="editarCaracteristicas('nuevoTitulo')">Actualizar</button>
                     </div>
                 </form>
@@ -459,8 +474,8 @@
             </div>
         </div>
     </div>
-                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
@@ -484,38 +499,36 @@
 
     // Almacena el nombre de la tarea en la variable global 'id'
     titulo = titulo1;
-    
   });
 
   /**
- * Esta función se encarga de eliminar una tarea a través de una solicitud AJAX al servidor.
- */
-function eliminarTarea() {
-  // Obtiene el id de la tarea desde una variable previamente definida (id)
-  var titulo2 = titulo;
+   * Esta función se encarga de eliminar una tarea a través de una solicitud AJAX al servidor.
+   */
+  function eliminarTarea() {
+    // Obtiene el id de la tarea desde una variable previamente definida (id)
+    var titulo2 = titulo;
 
-  // Realiza una solicitud AJAX al servlet 'SvEliminar' para eliminar la solicitud
-  $.ajax({
-    url: 'SvLibros?titulo=' + titulo, // URL del servlet con el parámetro 'id' para la eliminación
-    method: 'GET', // Método HTTP utilizado para la solicitud (GET en este caso)
-    success: function (data) {
-      // En caso de éxito en la solicitud:
+    // Realiza una solicitud AJAX al servlet 'SvEliminar' para eliminar la solicitud
+    $.ajax({
+      url: 'SvLibros?titulo=' + titulo, // URL del servlet con el parámetro 'id' para la eliminación
+      method: 'GET', // Método HTTP utilizado para la solicitud (GET en este caso)
+      success: function (data) {
+        // En caso de éxito en la solicitud:
 
-      // Cierra el modal de eliminación
-      $('#eliminar').modal('hide');
+        // Cierra el modal de eliminación
+        $('#eliminar').modal('hide');
 
-      // Recarga la página actual para reflejar los cambios
-      location.reload();
-    },
-    error: function () {
-      // En caso de error en la solicitud:
+        // Recarga la página actual para reflejar los cambios
+        location.reload();
+      },
+      error: function () {
+        // En caso de error en la solicitud:
 
-      // Registra un mensaje de error en la consola (para fines de depuración)
-      console.log('Error al eliminar ');
-    }
-  });
-}
-
+        // Registra un mensaje de error en la consola (para fines de depuración)
+        console.log('Error al eliminar ');
+      }
+    });
+  }
       // funcion para mostrar los datos en la ventana modal
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Botón que desencadenó el evento
@@ -539,7 +552,7 @@ function eliminarTarea() {
                 $("#libroError").modal("show");
         }
         
-        $('#editModalConfirm').on('show.bs.modal', function (event) {
+     $('#editModalConfirm').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
         var tit = button.data('nombre');
          $('#titulo').text(tit);
@@ -547,25 +560,37 @@ function eliminarTarea() {
     });
 
 
-    $('#editModalConfirm').on('show.bs.modal', function (event) {
-        // Al hacer clic en el botón, pasa la variable titulo a las modales
-        $('#pasar').click(function () {
-            $('#editAutor').data('titulo', titulo);
-            $('#editAutor').modal('show'); // Muestra modal2
-        });
-        $('#pasar1').click(function () {
-            $('#editAnio').data('titulo', titulo);
-            $('#editAnio').modal('show'); // Muestra modal2
-        });
-        $('#pasar2').click(function () {
-            $('#editFoto').data('titulo', titulo);
-            $('#editFoto').modal('show'); // Muestra modal2
-        });
-        $('#pasar3').click(function () {
-            $('#editEstado').data('titulo', titulo);
-            $('#editEstado').modal('show'); // Muestra modal2
-        });
+  $('#editModalConfirm').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var tit = button.data('nombre');
+    $('#titulo').text(tit);
+    titulo = tit;
+
+    // Al hacer clic en el botón, pasa la variable titulo a las modales
+    $('#pasar').click(function () {
+        $('#editAutor').data('titulo', titulo);
+        $('#editAutor').modal('show'); // Muestra modal2
     });
+
+    $('#pasar1').click(function () {
+        // Asegúrate de definir el modal correspondiente (editAnio) antes de acceder a él
+        $('#editAnio').data('titulo', titulo);
+        $('#editAnio').modal('show'); // Muestra modal2
+    });
+
+    $('#pasar2').click(function () {
+        // Asegúrate de definir el modal correspondiente (editFoto) antes de acceder a él
+        $('#editFoto').data('titulo', titulo);
+        $('#editFoto').modal('show'); // Muestra modal2
+    });
+
+    $('#pasar3').click(function () {
+        // Asegúrate de definir el modal correspondiente (editEstado) antes de acceder a él
+        $('#editEstado').data('titulo', titulo);
+        $('#editEstado').modal('show'); // Muestra modal2
+    });
+});
+
 // JavaScript para modal2
     $('#editAutor').on('show.bs.modal', function (event) {
         // Obtiene la variable pasada desde modal1 y la muestra en modal2
@@ -611,11 +636,5 @@ function eliminarTarea() {
 
 
     });
-  
-  
-
-
 </script>
-</body>
-
-</html>
+ <%@include file= "templates/footer.jsp" %> 

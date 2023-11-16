@@ -8,6 +8,7 @@ package Servlets;
  */
 import com.umariana.bibliotecaweb.DatosUsuarios;
 import com.umariana.bibliotecaweb.Gestion;
+import com.umariana.bibliotecaweb.ListaDobleEnlace;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -34,7 +35,8 @@ public class SvLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+       
     }
 
 
