@@ -1,0 +1,12 @@
+Servlets\SvRegistrarUsuario.class
+com\umariana\bibliotecaweb\DatosUsuarios.class
+com\umariana\bibliotecaweb\Gestion.class
+com\umariana\bibliotecaweb\JAXRSConfiguration.class
+com\umariana\bibliotecaweb\resources\JavaEE8Resource.class
+Servlets\SvGestionVer.class
+com\umariana\bibliotecaweb\Libros.class
+com\umariana\bibliotecaweb\ListaDobleEnlace$NodoDobleEnlace.class
+Servlets\SvEditar.class
+Servlets\SvLogin.class
+Servlets\SvLibros.class
+com\umariana\bibliotecaweb\ListaDobleEnlace.class
