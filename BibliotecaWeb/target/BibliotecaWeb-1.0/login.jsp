@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Agency - Start Bootstrap Theme</title>
+    
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -17,6 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/js/bootstrap.min.js"></script>
+        <title>Biblioteca</title>
 </head>
 
 <body id="page-top">
@@ -452,7 +459,8 @@
             </div>
         </div>
     </div>
-
+                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
@@ -476,36 +484,38 @@
 
     // Almacena el nombre de la tarea en la variable global 'id'
     titulo = titulo1;
+    
   });
 
   /**
-   * Esta función se encarga de eliminar una tarea a través de una solicitud AJAX al servidor.
-   */
-  function eliminarTarea() {
-    // Obtiene el id de la tarea desde una variable previamente definida (id)
-    var titulo2 = titulo;
+ * Esta función se encarga de eliminar una tarea a través de una solicitud AJAX al servidor.
+ */
+function eliminarTarea() {
+  // Obtiene el id de la tarea desde una variable previamente definida (id)
+  var titulo2 = titulo;
 
-    // Realiza una solicitud AJAX al servlet 'SvEliminar' para eliminar la solicitud
-    $.ajax({
-      url: 'SvLibros?titulo=' + titulo, // URL del servlet con el parámetro 'id' para la eliminación
-      method: 'GET', // Método HTTP utilizado para la solicitud (GET en este caso)
-      success: function (data) {
-        // En caso de éxito en la solicitud:
+  // Realiza una solicitud AJAX al servlet 'SvEliminar' para eliminar la solicitud
+  $.ajax({
+    url: 'SvLibros?titulo=' + titulo, // URL del servlet con el parámetro 'id' para la eliminación
+    method: 'GET', // Método HTTP utilizado para la solicitud (GET en este caso)
+    success: function (data) {
+      // En caso de éxito en la solicitud:
 
-        // Cierra el modal de eliminación
-        $('#eliminar').modal('hide');
+      // Cierra el modal de eliminación
+      $('#eliminar').modal('hide');
 
-        // Recarga la página actual para reflejar los cambios
-        location.reload();
-      },
-      error: function () {
-        // En caso de error en la solicitud:
+      // Recarga la página actual para reflejar los cambios
+      location.reload();
+    },
+    error: function () {
+      // En caso de error en la solicitud:
 
-        // Registra un mensaje de error en la consola (para fines de depuración)
-        console.log('Error al eliminar ');
-      }
-    });
-  }
+      // Registra un mensaje de error en la consola (para fines de depuración)
+      console.log('Error al eliminar ');
+    }
+  });
+}
+
       // funcion para mostrar los datos en la ventana modal
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Botón que desencadenó el evento
