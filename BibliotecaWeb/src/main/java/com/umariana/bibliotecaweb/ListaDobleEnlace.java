@@ -82,8 +82,9 @@ public class ListaDobleEnlace implements Serializable {
             resultado += "<td>" + libro.getTitulo() + "</td>";
             resultado += "<td>" + libro.getAutor() + "</td>";
             resultado += "<td>" + libro.getAnio() + "</td>";
+            resultado += "<td>" + libro.getFoto() + "</td>";
             resultado += "<td>" + libro.getPrestado() + "</td>";
-            resultado += "<td> <a href=\"#\" type=\"button\" class=\"btn btn-outline-success\" data-bs-toggle=\"modal\" data-bs-target=\"#editModalConfirm\" data-nombre=\"" + libro.getTitulo() + "\" id=\"editarBtn\" onclick=\"editar(this)\"><i class=\"fa-solid fa-marker\"></i> </a>";
+            resultado += "<td> <a href=\"#\" type=\"button\" class=\"btn btn-outline-success\" data-bs-toggle=\"modal\" data-bs-target=\"#editModalConfirm\" data-nombre=\"" + libro.getTitulo() + "\" id=\"editarBtn\"><i class=\"fa-solid fa-marker\"></i> </a>";
             resultado += "<a href=\"#\" class=\"btn btn-outline-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-nombre=\"" + libro.getTitulo() + "\"><i class=\"fa fa-eye\"> </i></a>";
             resultado += "<a href=\"#\" type=\"button\" class=\"btn btn-outline-danger\" data-bs-toggle=\"modal\" data-bs-target=\"#eliminar\" data-nombre=\"" + libro.getTitulo() + "\"><i class=\"fa-solid fa-trash\"></i></a></td>";
             resultado += "</tr>";
@@ -95,6 +96,7 @@ public class ListaDobleEnlace implements Serializable {
     if (encontrado.equals("no")){
         resultado += "<tr>";
         resultado += "<td>No hay libros</td>";
+        resultado += "<td></td>";
         resultado += "<td></td>";
         resultado += "<td></td>";
         resultado += "<td></td>";
@@ -210,6 +212,7 @@ public class ListaDobleEnlace implements Serializable {
         resultado += "<td>" + libro.getTitulo() + "</td>";
         resultado += "<td>" + libro.getAutor() + "</td>";
         resultado += "<td>" + libro.getAnio() + "</td>";
+        resultado += "<td>" + libro.getFoto() + "</td>";
         resultado += "<td>" + libro.getPrestado() + "</td>";
         resultado += "<td> <a href=\"#\" type=\"button\" class=\"btn btn-outline-success\" data-bs-toggle=\"modal\" data-bs-target=\"#editModalConfirm\" data-nombre=\"" + libro.getTitulo() + "\" id=\"editarBtn\" onclick=\"editar(this)\"><i class=\"fa-solid fa-marker\"></i> </a>";
         resultado += "<a href=\"#\" class=\"btn btn-outline-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-nombre=\"" + libro.getTitulo() + "\"><i class=\"fa fa-eye\"> </i></a>";
@@ -225,6 +228,7 @@ public class ListaDobleEnlace implements Serializable {
     if(!en){
         resultado += "<tr>";
         resultado += "<td>No encontramos coindicencias</td>";
+        resultado += "<td></td>";
         resultado += "<td></td>";
         resultado += "<td></td>";
         resultado += "<td></td>";

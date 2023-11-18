@@ -19,9 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofpXbY0E2PnQ1c1Nqoq7vmODdR/5C5IND"
-        crossorigin="anonymous" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Core theme CSS (includes custom styles) -->
     <link href="css/styles.css" rel="stylesheet" />
@@ -30,12 +29,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/latest/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+
     <title>Biblioteca</title>
 </head>
+
 
 <body id="page-top">
     <%
@@ -474,13 +473,9 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
     <script>
   /**
    * Esta función se encarga de mostrar el modal de confirmación antes de eliminar una tarea.
