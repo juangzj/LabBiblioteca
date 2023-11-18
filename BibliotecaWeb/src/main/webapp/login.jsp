@@ -290,7 +290,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModalConfirm" onclick="eliminarTarea(1)">Eliminar</button>
+                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModalConfirm" onclick="eliminarLibro(1)">Eliminar</button>
                 </div>
             </div>
         </div>
@@ -478,7 +478,7 @@
 
     <script>
   /**
-   * Esta función se encarga de mostrar el modal de confirmación antes de eliminar una tarea.
+   * Esta función se encarga de mostrar el modal de confirmación antes de eliminar un libro.
    * Se dispara cuando se muestra el modal.
    */
   $('#eliminar').on('show.bs.modal', function (event) {
@@ -488,7 +488,6 @@
     // Obtiene el id de la tarea desde el atributo 'data-nombre' del botón
     var titulo1 = button.data('nombre');
 
-    console.log("idTarea");
     // Obtiene el modal actual
     var modal = $(this);
 
@@ -497,9 +496,9 @@
   });
 
   /**
-   * Esta función se encarga de eliminar una tarea a través de una solicitud AJAX al servidor.
+   * Esta función se encarga de eliminar un libro a través de una solicitud AJAX al servidor.
    */
-  function eliminarTarea() {
+  function eliminarLibro() {
     // Obtiene el id de la tarea desde una variable previamente definida (id)
     var titulo2 = titulo;
 
